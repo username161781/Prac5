@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Планировщик задач</title>
+    <link rel="stylesheet" href="/style.css">
+    <script src="/app.js" defer></script>
+</head>
+<body>
+<main class="container">
+    <header class="header">
+        <p class="eyebrow">TASK PLANNER</p>
+        <h1>Планировщик задач</h1>
+        <p class="subtitle">
+            Планируйте дела и отслеживайте их выполнение.
+        </p>
+    </header>
+
+    <section class="panel">
+        <h2>Новая задача</h2>
+
+        <form id="task-form">
+            <label for="title">Название задачи *</label>
+            <input
+                    id="title"
+                    name="title"
+                    type="text"
+                    maxlength="200"
+                    placeholder="Например, подготовить отчёт"
+                    required
+            >
+
+            <label for="description">Описание</label>
+            <textarea
+                    id="description"
+                    name="description"
+                    maxlength="2000"
+                    rows="3"
+                    placeholder="Дополнительная информация"
+            ></textarea>
+
+            <button type="submit">Добавить задачу</button>
+        </form>
+
+        <p id="message" role="status" aria-live="polite"></p>
+    </section>
+
+    <section class="tasks-section">
+        <div class="section-heading">
+            <h2>Мои задачи</h2>
+            <button id="refresh-button" class="secondary" type="button">
+                Обновить
+            </button>
+        </div>
+
+        <p id="summary" class="summary"></p>
+        <ul id="task-list" class="task-list"></ul>
+    </section>
+</main>
+</body>
+</html>
